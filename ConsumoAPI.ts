@@ -1,7 +1,7 @@
 interface Product{
     title: string;
     id: number;
-    price: number
+    price: number;
 }
 
 async function getProducts(): Promise <void> {
@@ -9,9 +9,7 @@ async function getProducts(): Promise <void> {
         const answer = await fetch("https://fakestoreapi.com/products/1");
         const product: Product = await answer.json();
         console.log(`Nome: ${product.title}\nID: ${product.id}\nPreço: ${product.price}`);  
-    } 
-    
-    catch(error){
+    } catch(error){
         console.log("Erro na requisição!");
     }
 }
